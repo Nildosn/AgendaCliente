@@ -24,3 +24,12 @@ Atividades do projeto
 :heavy_check_mark: JPA & JSF  <br>
 :bank: SQL & ORACLE <br>
 :robot: PrimeFaces <br>
+
+## Contato da equipe
+
+Nildson Kleyton 
+
+## Licença
+Nenhuma lincesa foi adicionada.
+
+![tenor](https://github.com/MauroDegaspari/Contacttura/blob/master/tenor.gif) 
