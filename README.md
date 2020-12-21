@@ -39,7 +39,7 @@ Contato: email, telefone
 :robot: PrimeFaces <br>
 
 ## Contato da equipe
-### :mailbox: nildsonkleyton@hotmail.com
+### :postbox: nildsonkleyton@hotmail.com
 
 ## Licença
 Nenhuma lincesa foi adicionada.
