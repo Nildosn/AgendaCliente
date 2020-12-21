@@ -31,14 +31,14 @@ public class LoginBean {
 		boolean logado = false;
 
 		Usuario usuarioPesquisa = new Usuario();
-		usuarioPesquisa.setUsuario(usuarioTela);// rescebe usuário da tela
+		usuarioPesquisa.setUsuario(this.usuarioTela);// rescebe usuário da tela
 
-		Usuario usuarioBanco = this.usuarioDao.pesquisarUsuario(usuarioTela);
+		Usuario usuarioBanco = this.usuarioDao.pesquisarUsuario(this.usuarioTela);
 
 		if (usuarioBanco != null) {
 			Usuario usuarioBase = usuarioBanco;
 
-			if (usuarioBase.getSenha().equals(senhaTela)) {
+			if (usuarioBase.getSenha().equals(this.senhaTela)) {
 				return "pages/pricipal.xhtml";
 			} else {
 				logado = false;

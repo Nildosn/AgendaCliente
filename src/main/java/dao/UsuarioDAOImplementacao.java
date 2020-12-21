@@ -6,10 +6,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
+import entidade.Cliente;
 import entidade.Usuario;
 import util.JpaUtil;
 
-public class UsuarioDAOImplementacao implements UsuarioDao{
+public class UsuarioDAOImplementacao implements UsuarioDao {
 
 	@Override
 	public boolean inserirUsuario(Usuario usuario) {
@@ -39,7 +40,6 @@ public class UsuarioDAOImplementacao implements UsuarioDao{
 			existe.setUsuario(usuario.getUsuario());
 			existe.setSenha(usuario.getSenha());
 
-
 			ent.merge(usuario);
 
 			tx.commit();
@@ -52,25 +52,26 @@ public class UsuarioDAOImplementacao implements UsuarioDao{
 
 	@Override
 	public boolean removerUsuario(Usuario usuario) {
-			EntityManager ent = JpaUtil.getEntityManager();
-			EntityTransaction tx = ent.getTransaction();
+		EntityManager ent = JpaUtil.getEntityManager();
+		EntityTransaction tx = ent.getTransaction();
 
-			Usuario existe = ent.find(Usuario.class, usuario.getUsuario());
+		Usuario existe = ent.find(Usuario.class, usuario.getUsuario());
 
-			tx.begin();
+		tx.begin();
 
-			if (existe != null) {
-				ent.remove(existe);
-				tx.commit();
-				ent.close();
-				return true;
-			} else {
-				return false;
-			}
+		if (existe != null) {
+			ent.remove(existe);
+			tx.commit();
+			ent.close();
+			return true;
+		} else {
+			return false;
 		}
+	}
 
 	@Override
 	public Usuario pesquisarUsuario(String usuario) {
+		
 		String sql = "from Usuario u where u.usuario = ?";
 
 		EntityManager ent = JpaUtil.getEntityManager();
@@ -88,17 +89,47 @@ public class UsuarioDAOImplementacao implements UsuarioDao{
 			return null;
 		}
 	}
+
+	@Override
+	public List<Usuario> pesquisarUsuario(Usuario usuario) {
+		String sql = "from Profissional p where 1=1 " + montarWhere(usuario);
+
+		EntityManager ent = JpaUtil.getEntityManager();
+
+		Query query = ent.createQuery(sql);
+
+		List<Usuario> listaUsuario = query.getResultList();
+
+		ent.close();
+
+		return listaUsuario;
+	}
+
 	// String montarWhere
 	private String montarWhere(Usuario usuario) {
 		String where = " ";
-		
-		if (usuario.getUsuario() !=null && !usuario.getUsuario().isEmpty()) {
-			where = where + "and u.usuario LIKE'%" + usuario.getUsuario() +"%'";
+
+		if (usuario.getUsuario() != null && !usuario.getUsuario().isEmpty()) {
+			where = where + "and u.usuario LIKE'%" + usuario.getUsuario() + "%'";
 		}
-		if(usuario.getSenha() !=null && !usuario.getSenha().isEmpty()){
-			where = where + "and u.senha LIKE'%" + usuario.getUsuario() +"%'";
+		if (usuario.getSenha() != null && !usuario.getSenha().isEmpty()) {
+			where = where + "and u.senha LIKE'%" + usuario.getUsuario() + "%'";
 		}
-		
+
 		return where;
+	}
+	public List<Usuario> listaUsuario() {
+
+		String sql = "from Usuario u";
+
+		EntityManager ent = JpaUtil.getEntityManager();
+
+		Query query = ent.createQuery(sql);
+
+		List<Usuario> listaUsuario = query.getResultList();
+
+		ent.close();
+
+		return listaUsuario;
 	}
 }
