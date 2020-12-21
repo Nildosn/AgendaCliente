@@ -38,8 +38,8 @@ Contato: email, telefone
 :bank: SQL & ORACLE <br>
 :robot: PrimeFaces <br>
 
-## Contato da equipe
-### :postbox: nildsonkleyton@hotmail.com
+## :postbox: Contato da equipe
+### nildsonkleyton@hotmail.com
 
 ## Licença
 Nenhuma lincesa foi adicionada.
