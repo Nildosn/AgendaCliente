@@ -18,7 +18,7 @@ Contato: email, telefone
 - Criar Telas: cadastrarCliente, pesquisarCliente, login
 - Criar ManagerBean para telas
 
-## Situação do Projeto
+## :clipboard: Situação do Projeto
 
 - [x] Estrutura de banco de dados(tabelas e relacionamento)
 - [x] Entidades java mapeadas para tabelas 
@@ -39,7 +39,7 @@ Contato: email, telefone
 :robot: PrimeFaces <br>
 
 ## Contato da equipe
-nildsonkleyton@hotmail.com
+### :mailbox: nildsonkleyton@hotmail.com
 
 ## Licença
 Nenhuma lincesa foi adicionada.
