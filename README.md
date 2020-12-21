@@ -26,8 +26,7 @@ Atividades do projeto
 :robot: PrimeFaces <br>
 
 ## Contato da equipe
-
-Nildson Kleyton 
+nildsonkleyton@hotmail.com
 
 ## Licença
 Nenhuma lincesa foi adicionada.
