@@ -22,10 +22,10 @@ Contato: email, telefone
 
 - [x] Estrutura de banco de dados(tabelas e relacionamento)
 - [x] Entidades java mapeadas para tabelas 
-- [ ] Estrutura DAO inserirCliente
-- [ ] Estrutura DAO pesquisarCliente
-- [ ] Estrutura DAO adicionarContatoCliente
-- [ ] Estrutura DAO removerContatoCliente
+- [x] Estrutura DAO inserirCliente
+- [x] Estrutura DAO pesquisarCliente
+- [x] Estrutura DAO adicionarContatoCliente
+- [x] Estrutura DAO removerContatoCliente
 - [ ] Criar Telas: cadastrarCliente
 - [ ] Criar Telas: pesquisarCliente
 - [x] Criar Telas: login
