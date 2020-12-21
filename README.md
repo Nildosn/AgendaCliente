@@ -10,7 +10,7 @@ Criar uma aplicação web de agenda de clientes com seus contatos, onde posso in
 Cliente: nome, cpf, idade, sexo, interesses e lista de contatos.
 Contato: email, telefone
 
-Atividades do projeto
+**Atividades do projeto**
 
 - Estrutura de banco de dados(tabelas e relacionamento)
 - Entidades java mapeadas para tabelas 
