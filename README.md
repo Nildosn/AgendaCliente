@@ -4,7 +4,7 @@
 
 ## Projeto Agenda de Clientes
 
-##Objetivo: 
+## Objetivo: 
 Criar uma aplicação web de agenda de clientes com seus contatos, onde posso inserir e pesquisar clientes com seus contatos.
 
 Cliente: nome, cpf, idade, sexo, interesses e lista de contatos.
