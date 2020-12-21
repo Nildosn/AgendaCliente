@@ -20,11 +20,16 @@ Atividades do projeto
 - Criar ManagerBean para telas
 
 ## Situação do Projeto
-Em construção.
+
 - [x] Estrutura de banco de dados(tabelas e relacionamento)
 - [x] Entidades java mapeadas para tabelas 
-- [ ] Estrutura DAO (inserirCliente, pesquisarCliente, adicionarContatoCliente, removerContatoCliente)
-- [ ] Criar Telas: cadastrarCliente, pesquisarCliente, login
+- [ ] Estrutura DAO inserirCliente
+- [ ] Estrutura DAO pesquisarCliente
+- [ ] Estrutura DAO adicionarContatoCliente
+- [ ] Estrutura DAO removerContatoCliente
+- [ ] Criar Telas: cadastrarCliente
+- [ ] Criar Telas: pesquisarCliente
+- [x] Criar Telas: login
 - [ ] Criar ManagerBean para telas
 
 ## 🛠 Cosntruído com:
