@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/modeloAgenda.xhtml">
+	<ui:define name="menu">
+		<h:form>
+			<p:menubar>
+				<p:submenu label="Arquivos" icon="pi pi-file">
+					<p:menuitem value="Cadastra" url="#" />
+					<p:menuitem value="Lista" url="#" />
+				</p:submenu>
+
+				<p:submenu label="Sobre" icon="pi pi-file">
+					<p:menuitem value="Project" url="#" />
+				</p:submenu>
+
+				<f:facet name="options">
+					<p:linkButton type="button" value="Logout" icon="pi pi-home" href="index.xhtml"/>
+				</f:facet>
+
+			</p:menubar>
+		</h:form>
+	</ui:define>
+</ui:composition>
