@@ -14,7 +14,7 @@ public class TesteConexao {
 		t.begin();
 
 		Login log = new Login();
-		log.setUsuario("Teste2");
+		log.setUsuario("Teste");
 		log.setSenha("123");
 		
 		ent.persist(log);

@@ -11,14 +11,14 @@
     <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
     
 	<p:dialog header="Agenda Cliente" visible="true" modal="true"
-		width="350px" height="250px">
+		width="370px" height="250px">
 
 
 		<h:form role="form">
 			<p:panelGrid columns="2" style="border:0px;">
 
 				<p:outputLabel value="Usuário:" />
-				<p:inputText value="#{LoginBean.cpfTela}" required="true"
+				<p:inputText value="#{LoginBean.usuarioTela}" required="true"
 					label="usuario" />
 
 				<p:outputLabel value="Senha:" />
@@ -34,7 +34,7 @@
 			</p>
 
 			<p>
-				<a href="/pages/cadastro.xhtml">Cadastre-se agora.</a>
+				<a href="pages/cadastro.xhtml">Cadastre-se agora.</a>
 			</p>
 
 		</h:form>
