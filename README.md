@@ -31,4 +31,4 @@ nildsonkleyton@hotmail.com
 ## Licença
 Nenhuma lincesa foi adicionada.
 
-![tenor](https://github.com/MauroDegaspari/Contacttura/blob/master/tenor.gif) 
+![tenor](https://media1.tenor.com/images/505ddb5e0b0e8c3e96b66e1469ef47c1/tenor.gif?itemid=4903969) 
