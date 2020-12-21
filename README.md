@@ -21,8 +21,13 @@ Atividades do projeto
 
 ## Situação do Projeto
 Em construção.
+- [x] Estrutura de banco de dados(tabelas e relacionamento)
+- [x] Entidades java mapeadas para tabelas 
+- [ ] Estrutura DAO (inserirCliente, pesquisarCliente, adicionarContatoCliente, removerContatoCliente)
+- [ ] Criar Telas: cadastrarCliente, pesquisarCliente, login
+- [ ] Criar ManagerBean para telas
 
-## Cosntruído com:
+## 🛠 Cosntruído com:
 :computer: ECLIPSE Java EE <br>
 :space_invader: Maven<br>
 :heavy_check_mark: JPA & JSF  <br>
