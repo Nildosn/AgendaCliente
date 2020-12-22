@@ -26,8 +26,10 @@ Contato: email, telefone
 - [x] Estrutura DAO pesquisarCliente
 - [x] Estrutura DAO adicionarContatoCliente
 - [x] Estrutura DAO removerContatoCliente
-- [ ] Criar Telas: cadastrarCliente
-- [ ] Criar Telas: pesquisarCliente
+Obs: Telas criada mas precisa de ajustes
+- [x] Criar Telas: cadastrarCliente
+- [x] Criar Telas: pesquisarCliente
+Obs: tela ok mais login não ativa
 - [x] Criar Telas: login
 - [ ] Criar ManagerBean para telas
 
