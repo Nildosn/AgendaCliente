@@ -27,6 +27,7 @@ public class LoginBean {
 
 	public String logar() {
 
+		
 		FacesMessage message = null;
 		boolean logado = false;
 

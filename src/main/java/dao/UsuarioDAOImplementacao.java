@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
-import entidade.Cliente;
 import entidade.Usuario;
 import util.JpaUtil;
 
@@ -92,7 +91,7 @@ public class UsuarioDAOImplementacao implements UsuarioDao {
 
 	@Override
 	public List<Usuario> pesquisarUsuario(Usuario usuario) {
-		String sql = "from Profissional p where 1=1 " + montarWhere(usuario);
+		String sql = "from Usuario u where 1=1 " + montarWhere(usuario);
 
 		EntityManager ent = JpaUtil.getEntityManager();
 

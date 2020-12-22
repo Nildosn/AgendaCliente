@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/modeloAgenda.xhtml">
+
+	<ui:define name="menu">
+		<ui:include src="/includes/menu2.xhtml" />
+	</ui:define>
+
+	<ui:define name="conteudo">
+		<h:form>
+			<h1 align="center">Cadastro de Usuário</h1>
+
+			<h:panelGrid columns="2" cellpadding="1">
+				<h:outputLabel value="Usuário:" />
+				<p:inputText required="true" label="nome"
+					value="#{UsuarioBean.usuario.nome}" />
+
+				<h:outputLabel value="Senha:" />
+				<p:inputText  required="true" label="cpf"
+					value="#{UsuarioBean.usuario.senha}" />
+
+
+			</h:panelGrid>
+			<p:commandButton value="Cadastrar" update="@form"
+				actionListener="#{PacienteBean.salvar}" />
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="/templates/modeloAgenda.xhtml">
 
@@ -9,7 +12,45 @@
 	</ui:define>
 
 	<ui:define name="conteudo">
+		<h:form>
+			<h1 align="center">Cadastro de Clientes</h1>
 
+			<h:panelGrid columns="2" cellpadding="1">
+				<h:outputLabel value="Nome:" />
+				<p:inputText required="true" label="nome"
+					value="#{ClienteBean.cliente.nome}" />
+
+				<h:outputLabel value="CPF:" />
+				<p:inputMask mask="999.999.999-99" required="true" label="cpf"
+					value="#{ClienteBean.cliente.cpf}" />
+
+				<h:outputLabel value="Sexo:" />
+				<p:inputText required="true" label="sexo"
+					value="#{ClienteBean.cliente.sexo}" />
+
+				<h:outputLabel value="Idade:" />
+				<p:inputText required="true" label="idade"
+					value="#{ClienteBean.cliente.sexo}" />
+
+				<h:outputLabel value="E-mail:" />
+				<p:inputText required="true" label="email"
+					value="#{ContatoBean.contato.email}" />
+
+				<h:outputLabel value="Fone:" placeholder="(99)99999-9999" />
+				<p:inputMask mask="(99)99999-9999" required="true" label="fone"
+					value="#{ContatoBean.contato.fone}" />
+
+				<h:outputLabel value="Interesses" />
+				<p:inputTextarea rows="10" cols="60" counter="display"
+					maxlength="4000" counterTemplate="{0} Maximo de Caracteres."
+					autoResize="false" />
+				<br />
+				<h:outputText id="display" />
+
+			</h:panelGrid>
+			<p:commandButton value="Cadastrar" update="@form"
+				actionListener="#{PacienteBean.salvar}" />
+		</h:form>
 	</ui:define>
 
 </ui:composition>

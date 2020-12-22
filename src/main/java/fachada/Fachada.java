@@ -81,7 +81,7 @@ public class Fachada {
 		return this.clienteDao.pesquisarCliente(cpf);
 	}
 
-	public List<Cliente> pesquisarClientes(Cliente cliente) {
+	public List<Cliente> pesquisarCliente(Cliente cliente) {
 		return this.clienteDao.pesquisarClientes(cliente);
 	}
 
