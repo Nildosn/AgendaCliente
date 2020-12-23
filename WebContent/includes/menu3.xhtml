@@ -6,22 +6,16 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="/templates/modeloAgenda.xhtml">
+
 	<ui:define name="menu">
 		<h:form>
 			<p:menubar>
-				<p:submenu label="Arquivos" icon="pi pi-file">
-					<p:menuitem value="Cadastra" url="cadastro.xhtml" />
-					<p:menuitem value="Pesquisa" url="pesquisa.xhtml" />
-				</p:submenu>
-
-				<p:submenu label="Sobre" icon="pi pi-file">
-					<p:menuitem value="Curso Fuctura" url="https://www.fuctura.com.br/recife/" />
-					<p:menuitem value="Criador" url="#" />
-				</p:submenu>
 
 				<f:facet name="options">
-					<p:linkButton type="button" value="Logout" icon="pi pi-home"
-						href="login.xhtml" />
+					<h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();" title="login">
+						<p:commandButton value="LogIn" icon="pi pi-home" />
+					</h:outputLink>
+
 				</f:facet>
 
 			</p:menubar>

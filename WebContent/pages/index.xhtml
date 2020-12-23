@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/modeloAgenda.xhtml">
+
+	<ui:define name="menu">
+		<ui:include src="/includes/menu3.xhtml" />
+	</ui:define>
+
+	<ui:define name="conteudo">
+		<h:body style="text-align: center;">
+			<h:form>
+				<script type="text/javascript">
+					function handleLoginRequest(xhr, status, args) {
+						if (args.validationFailed || !args.loggedIn) {
+							PF('dlg').jq.effect("shake", {
+								times : 5
+							}, 100);
+						} else {
+							PF('dlg').hide();
+							$('#loginLink').fadeOut();
+						}
+					}
+				</script>
+				<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+				<p:dialog header="Login" widgetVar="dlg" resizable="false">
+					<h:panelGrid columns="2" cellpadding="5">
+						<h:outputLabel for="usuario" value="Usuário:" />
+						<p:inputText value="#{LoginBean.usuarioTela}" required="true"
+							label="usuario" />
+
+						<h:outputLabel for="senha" value="Senha:" />
+						<p:password id="senha" value="#{LoginBean.senhaTela}"
+							required="true" label="senha" />
+
+						<f:facet name="footer">
+							<p:commandButton value="Entrar" update="growl"
+								action="#{LoginBean.loginTeste}"
+								oncomplete="handleLoginRequest(xhr, status, args)" />
+							<p:commandButton value="Limpar" type="reset" />
+							<p>
+								<a href="senha.xhtml">Esqueci minha senha!</a>
+							</p>
+
+							<p>
+								<a href="usuario.xhtml">Cadastre-se agora.</a>
+							</p>
+						</f:facet>
+					</h:panelGrid>
+				</p:dialog>
+			</h:form>
+			<h1 align="center">Seja Vimdo</h1>
+			<h3 align="center">Faça o Login</h3>
+		</h:body>
+
+	</ui:define>
+
+</ui:composition>

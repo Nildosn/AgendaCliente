@@ -18,10 +18,10 @@
 	</script>
 </h:head>
 
-<h:body  style="text-align: center;">
- <!-- pesquisar growl -->    
-    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
-    
+<h:body style="text-align: center;">
+	<!-- pesquisar growl -->
+	<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
 	<p:dialog header="Agenda Cliente" visible="true" modal="true"
 		width="370px" height="250px">
 
@@ -39,15 +39,17 @@
 
 			</p:panelGrid>
 			<p>
-				<p:commandButton value="Entrar" update="growl" action="#{LoginBean.logar}"  oncomplete="handleLoginRequest(xhr, status, args)" />
+				<p:commandButton value="Entrar" update="growl"
+					action="#{LoginBean.logar}"
+					oncomplete="handleLoginRequest(xhr, status, args)" />
 				<p:commandButton value="Limpar" type="reset" />
 			</p>
 			<p>
-				<a href="pages/senha.xhtml">Esqueci minha senha!</a>
+				<a href="senha.xhtml">Esqueci minha senha!</a>
 			</p>
 
 			<p>
-				<a href="pages/usuario.xhtml">Cadastre-se agora.</a>
+				<a href="usuario.xhtml">Cadastre-se agora.</a>
 			</p>
 
 		</h:form>
