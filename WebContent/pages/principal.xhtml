@@ -11,8 +11,73 @@
 		<ui:include src="/includes/menu.xhtml" />
 	</ui:define>
 
-	<ui:define name="conteudo">
-Principal
+	<ui:define name="conteudo" >
+		<h:form>
+			<p:toolbar>
+				<p:toolbarGroup>
+					<p:commandButton value="Adicionar"
+						action="#{ClienteBean.adicionar()}" update="@form"></p:commandButton>
+				</p:toolbarGroup>
+			</p:toolbar>
+			<br/>
+			<p:fieldset legend="Cadrastro" >
+				<p:panelGrid columns="2">
+					<h:outputLabel value="Nome"></h:outputLabel>
+					<p:inputText value="#{ClienteBean.cliente.nome}"></p:inputText>
+
+					<h:outputLabel value="CPF"></h:outputLabel>
+					<p:inputMask mask="999.999.999-99"
+						value="#{ClienteBean.cliente.cpf}"></p:inputMask>
+
+					<h:outputLabel value="Sexo"></h:outputLabel>
+					<p:inputText value="#{ClienteBean.cliente.sexo}"></p:inputText>
+
+					<h:outputLabel value="Idade"></h:outputLabel>
+					<p:inputText value="#{ClienteBean.cliente.idade}"></p:inputText>
+
+					<h:outputLabel value="Fone:"></h:outputLabel>
+					<p:inputMask mask="(999) 99999-9999" value="#{ClienteBean.contato.telefone}"></p:inputMask>
+
+					<h:outputLabel value="E-mail:"></h:outputLabel>
+					<p:inputText value="#{ClienteBean.contato.email}"></p:inputText>
+
+					<h:outputLabel value="Interesses"></h:outputLabel>
+					<p:inputTextarea value="#{ClienteBean.cliente.interesses}" rows="3"
+						cols="50" maxlength="4000"
+						counterTemplate="{0} Maximo de Caracteres." autoResize="false" />
+
+				</p:panelGrid>
+				<br />
+				<p:dataTable value="#{ClienteBean.clientes}" var="cliente"  scrollable="true" scrollHeight="w" scrollWidth="100%">
+					<f:facet name="header">
+            			Lista de Clientes
+        			</f:facet>
+					<p:column headerText="Nome" sortBy="nome">
+						<h:outputText value="#{cliente.nome}"></h:outputText>
+					</p:column>
+					<p:column headerText="CPF">
+						<h:outputText value="#{cliente.cpf}"></h:outputText>
+					</p:column>
+					<p:column headerText="Sexo">
+						<h:outputText value="#{cliente.sexo}"></h:outputText>
+					</p:column>
+					<p:column headerText="Idade">
+						<h:outputText value="#{cliente.idade}"></h:outputText>
+					</p:column>
+					<p:column headerText="Fone">
+						<h:outputText value="#{contato.telefone}"></h:outputText>
+					</p:column>
+					<p:column headerText="E-mail">
+						<h:outputText value="#{contato.email}"></h:outputText>
+					</p:column>
+					<p:column headerText="Interesses">
+						<h:outputText value="#{cliente.interesses}"></h:outputText>
+					</p:column>
+				</p:dataTable>
+
+			</p:fieldset>
+		</h:form>
+
 	</ui:define>
 
 </ui:composition>

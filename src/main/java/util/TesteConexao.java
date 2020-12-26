@@ -1,9 +1,11 @@
-package entidade;
+package util;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import util.JpaUtil;
+import entidade.Cliente;
+import entidade.Contato;
+import entidade.Login;
 
 public class TesteConexao {
 
@@ -14,8 +16,8 @@ public class TesteConexao {
 		t.begin();
 
 		Login log = new Login();
-		log.setUsuario("Teste");
-		log.setSenha("123");
+		log.setUsuario("admin");
+		log.setSenha("admin");
 		
 		ent.persist(log);
 		

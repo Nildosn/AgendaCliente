@@ -3,6 +3,7 @@ package controle;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.PrimeFaces;
@@ -11,40 +12,37 @@ import dao.UsuarioDAOImplementacao;
 import dao.UsuarioDao;
 import entidade.Usuario;
 
-
 @ManagedBean(name = "LoginBean")
 @RequestScoped
 public class LoginBean {
 
 	private String usuarioTela;
 	private String senhaTela;
-
 	private UsuarioDao usuarioDao;
 
 	public LoginBean() {
 		this.usuarioDao = new UsuarioDAOImplementacao();
 	}
 
-    public void loginTeste() {
-        FacesMessage message = null;
-        boolean loggedIn = false;
-         
-        if(usuarioTela != null && usuarioTela.equals("admin") && senhaTela != null && senhaTela.equals("admin")) {
-            loggedIn = true;
-            message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", usuarioTela);
-            System.out.println("pricipal.xhtml");
-        } else {
-            loggedIn = false;
-            message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Loggin Error", "Invalid credentials");
-        }
-         
-        FacesContext.getCurrentInstance().addMessage(null, message);
-        PrimeFaces.current().ajax().addCallbackParam("loggedIn", loggedIn);
-    }
-    
+	public void loginTeste() {
+		FacesMessage message = null;
+		boolean loggedIn = false;
+
+		if (usuarioTela != null && usuarioTela.equals("admin") && senhaTela != null && senhaTela.equals("admin")) {
+			loggedIn = true;
+			message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", usuarioTela);
+			System.out.println("pricipal.xhtml");
+		} else {
+			loggedIn = false;
+			message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Loggin Error", "Credencias invalidas");
+		}
+
+		FacesContext.getCurrentInstance().addMessage(null, message);
+		PrimeFaces.current().ajax().addCallbackParam("loggedIn", loggedIn);
+	}
+
 	public String logar() {
 
-		
 		FacesMessage message = null;
 		boolean logado = false;
 
@@ -68,16 +66,17 @@ public class LoginBean {
 
 		FacesContext.getCurrentInstance().addMessage(null, message);
 		PrimeFaces.current().ajax().addCallbackParam("Logado", logado);
-
+		System.out.println("qual é o erro?");
 		return "";
 
 	}
 
-	public String getusuarioTela() {
+//get set
+	public String getUsuarioTela() {
 		return usuarioTela;
 	}
 
-	public void setusuarioTela(String usuarioTela) {
+	public void setUsuarioTela(String usuarioTela) {
 		this.usuarioTela = usuarioTela;
 	}
 
@@ -87,6 +86,14 @@ public class LoginBean {
 
 	public void setSenhaTela(String senhaTela) {
 		this.senhaTela = senhaTela;
+	}
+
+	public UsuarioDao getUsuarioDao() {
+		return usuarioDao;
+	}
+
+	public void setUsuarioDao(UsuarioDao usuarioDao) {
+		this.usuarioDao = usuarioDao;
 	}
 
 }

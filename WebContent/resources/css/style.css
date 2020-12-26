@@ -6,3 +6,10 @@
 .ui-layout-north .ui-layout-unit-content {
 	overflow: visible !important;
 }
+
+.ui-datatable input {
+	box-sizing: border-box;
+	width: 100%;
+	-webkit-box-shadow: none;
+	box-shadow: none !important;
+}

@@ -4,35 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.application.FacesMessage;
-import javax.faces.bean.RequestScoped;
-import javax.faces.context.FacesContext;
+import javax.faces.bean.SessionScoped;
 
-import dao.ClienteDAOImplementacao;
 import entidade.Cliente;
+import entidade.Contato;
 
 @ManagedBean(name = "ClienteBean")
-@RequestScoped
+@SessionScoped
 public class ClienteBean {
+	
+	private Cliente cliente = new Cliente();
+	private List<Cliente> clientes = new ArrayList<>();
+	private Contato contato = new Contato();
+	private List<Contato> contatos = new ArrayList<>();
 
-	private Cliente cliente;
-	private ClienteDAOImplementacao clienteDao;
-
-	public ClienteBean() {
-		this.cliente = new Cliente();
-		this.clienteDao = new ClienteDAOImplementacao();
-	}
-
-	public void cadastrar() {
-
-		if (this.clienteDao.inserirCliente(cliente)) {
-			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso!", "Paciente cadastrado!"));
-		} else {
-			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Erro no cadastro!"));
-		}
-
+	public void adicionar() {
+		
+		clientes.add(cliente);
+		cliente = new Cliente(); 
+		contatos.add(contato);
+		contato = new Contato(); 
 	}
 
 	public Cliente getCliente() {
@@ -43,15 +34,28 @@ public class ClienteBean {
 		this.cliente = cliente;
 	}
 
-	public ClienteDAOImplementacao getClienteDao() {
-		return clienteDao;
+	public List<Cliente> getClientes() {
+		return clientes;
 	}
 
-	public void setClienteDao(ClienteDAOImplementacao clienteDao) {
-		this.clienteDao = clienteDao;
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
 	}
 
-	
-	
+	public Contato getContato() {
+		return contato;
+	}
+
+	public void setContato(Contato contato) {
+		this.contato = contato;
+	}
+
+	public List<Contato> getContatos() {
+		return contatos;
+	}
+
+	public void setContatos(List<Contato> contatos) {
+		this.contatos = contatos;
+	}
 
 }

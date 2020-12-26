@@ -71,7 +71,7 @@ public class UsuarioDAOImplementacao implements UsuarioDao {
 	@Override
 	public Usuario pesquisarUsuario(String usuario) {
 		
-		String sql = "from Usuario u where u.usuario = ?";
+		String sql = "from LOGIN l where l.usuario = ?";
 
 		EntityManager ent = JpaUtil.getEntityManager();
 
@@ -91,7 +91,7 @@ public class UsuarioDAOImplementacao implements UsuarioDao {
 
 	@Override
 	public List<Usuario> pesquisarUsuario(Usuario usuario) {
-		String sql = "from Usuario u where 1=1 " + montarWhere(usuario);
+		String sql = "from LOGIN l where 1=1 " + montarWhere(usuario);
 
 		EntityManager ent = JpaUtil.getEntityManager();
 
@@ -109,17 +109,18 @@ public class UsuarioDAOImplementacao implements UsuarioDao {
 		String where = " ";
 
 		if (usuario.getUsuario() != null && !usuario.getUsuario().isEmpty()) {
-			where = where + "and u.usuario LIKE'%" + usuario.getUsuario() + "%'";
+			where = where + "and l.usuario LIKE'%" + usuario.getUsuario() + "%'";
 		}
 		if (usuario.getSenha() != null && !usuario.getSenha().isEmpty()) {
-			where = where + "and u.senha LIKE'%" + usuario.getUsuario() + "%'";
+			where = where + "and l.senha LIKE'%" + usuario.getUsuario() + "%'";
 		}
 
 		return where;
 	}
+	
 	public List<Usuario> listaUsuario() {
 
-		String sql = "from Usuario u";
+		String sql = "from Login l";
 
 		EntityManager ent = JpaUtil.getEntityManager();
 
