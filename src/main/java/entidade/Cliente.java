@@ -32,6 +32,8 @@ public class Cliente {
 	@ManyToOne
 	@JoinColumn(name = "ID_CONTATO", referencedColumnName = "ID_CONTATO", nullable = false)
 	private Contato contato;
+	
+	
 //get set 	
 	public int getIdCliente() {
 		return idCliente;
