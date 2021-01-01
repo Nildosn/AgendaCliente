@@ -13,24 +13,21 @@
 
 	<ui:define name="conteudo">
 		<h:form>
-			<h:form>
-				<p:fieldset legend="Cadastro de Usuário">
-					<h:panelGrid columns="2" cellpadding="1">
-						<h:outputLabel value="Usuário:" />
-						<p:inputText required="true" label="nome"
-							value="#{UsuarioBean.usuario.nome}" />
+			<p:fieldset legend="Cadastro de Usuário">
+				<h:panelGrid columns="2" cellpadding="1">
+					<h:outputLabel value="Usuário:" />
+					<p:inputText required="true" label="nome"
+						value="#{UsuarioBean.usuario.nome}" />
 
-						<h:outputLabel value="Senha:" />
-						<p:inputText required="true" label="cpf"
-							value="#{UsuarioBean.usuario.senha}" />
+					<h:outputLabel value="Senha:" />
+					<p:inputText required="true" label="cpf"
+						value="#{UsuarioBean.usuario.senha}" />
 
 
-					</h:panelGrid>
-					<p:commandButton value="Cadastrar" update="@form"
-						actionListener="#{UsuarioBean.salvar}" />
-				</p:fieldset>
-			</h:form>
-
+				</h:panelGrid>
+				<p:commandButton value="Cadastrar" update="@form"
+					actionListener="#{UsuarioBean.salvar}" />
+			</p:fieldset>
 		</h:form>
 	</ui:define>
 

@@ -18,7 +18,17 @@ public class ClienteBean {
 	public void adicionar() {
 		this.clienteDao.inserirCliente(cliente);
 	}
-
+	
+	public void pesquisar() {
+		
+	}
+	
+	public void editar() {
+		
+	}
+	public void remover() {
+		
+	}
 	public Cliente getCliente() {
 		return cliente;
 	}
