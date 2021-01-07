@@ -1,5 +1,8 @@
 package controle;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -11,24 +14,36 @@ import entidade.Contato;
 @RequestScoped
 public class ClienteBean {
 
-	private Cliente cliente = new Cliente();
-	private Contato contato = new Contato();
-	private ClienteDAOImplementacao clienteDao = new ClienteDAOImplementacao();
+	private Cliente cliente;
+	private Contato contato;
+	private ClienteDAOImplementacao clienteDao;
+	private List<Cliente> listarCliente;
 
+	public ClienteBean() {
+		this.cliente = new Cliente();
+		this.contato = new Contato();
+		this.clienteDao = new ClienteDAOImplementacao();
+		this.listarCliente = new ArrayList<Cliente>();
+	}
+
+//metodos
 	public void adicionar() {
 		this.clienteDao.inserirCliente(cliente);
 	}
-	
+
 	public void pesquisar() {
-		
+		this.listarCliente = clienteDao.pesquisarClientes(this.cliente);
+	}
+
+	public void editar() {
+		this.clienteDao.alterarCliente(this.cliente);
+	}
+
+	public void remover() {
+		this.clienteDao.removerCliente(this.cliente);
 	}
 	
-	public void editar() {
-		
-	}
-	public void remover() {
-		
-	}
+//get set 
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -53,4 +68,11 @@ public class ClienteBean {
 		this.clienteDao = clienteDao;
 	}
 
+	public List<Cliente> getListarCliente() {
+		return listarCliente;
+	}
+
+	public void setListarCliente(List<Cliente> listarCliente) {
+		this.listarCliente = listarCliente;
+	}
 }

@@ -13,17 +13,16 @@
 
 	<ui:define name="conteudo">
 		<h:form>
+			<p:messages autoUpdate="true" id="msg" />
 			<p:toolbar>
 				<p:toolbarGroup>
-					<p:commandButton value="Adicionar"
+					<p:commandButton value="Adicionar" icon="pi pi-save"
 						action="#{ClienteBean.adicionar}" update="@form"
-						style="margin-right:5px;" icon="pi pi-save"></p:commandButton>
-					<p:commandButton value="Pesquisar"
+						style="margin-right:5px;"></p:commandButton>
+					<p:commandButton value="Pesquisar" icon="pi pi-search"
 						action="#{ClienteBean.pesquisar}" update="@form"></p:commandButton>
 				</p:toolbarGroup>
 			</p:toolbar>
-			<br />
-			<p:messages autoUpdate="true" id="msg" />
 			<p:fieldset legend="Cadrastro">
 				<p:panelGrid columns="2">
 					<h:outputLabel value="Nome" for="name"></h:outputLabel>
@@ -52,43 +51,41 @@
 						cols="50" maxlength="4000"
 						counterTemplate="{0} Maximo de Caracteres." autoResize="false" />
 				</p:panelGrid>
-				<br />
-				<p:scrollPanel style="width:100%;height:100%">
-					<p:dataTable value="#{ClienteBean.cliente}" var="cliente"
-						scrollable="true" scrollHeight="" scrollWidth="100%">
-						<f:facet name="header">
-            			Lista de Clientes
-        				</f:facet>
-						<p:column headerText="Nome" sortBy="#{cliente.nome}">
-							<h:outputText value="#{cliente.nome}"></h:outputText>
-						</p:column>
-						<p:column headerText="CPF" sortBy="#{cliente.cpf}">
-							<h:outputText value="#{cliente.cpf}"></h:outputText>
-						</p:column>
-						<p:column headerText="Sexo" sortBy="#{cliente.sexo}">
-							<h:outputText value="#{cliente.sexo}"></h:outputText>
-						</p:column>
-						<p:column headerText="Idade" sortBy="#{cliente.idade}">
-							<h:outputText value="#{cliente.idade}"></h:outputText>
-						</p:column>
-						<p:column headerText="Fone">
-							<h:outputText value="#{cliente.contato.telefone}"></h:outputText>
-						</p:column>
-						<p:column headerText="E-mail">
-							<h:outputText value="#{cliente.contato.email}"></h:outputText>
-						</p:column>
-						<p:column headerText="Interesses">
-							<h:outputText value="#{cliente.interesses}"></h:outputText>
-						</p:column>
-						<p:column width="80">
-							<p:commandButton action="#{ClienteBean.editar}" update="@form"
-								icon="pi pi-pencil" style="margin-right:5px;"></p:commandButton>
-							<p:commandButton action="#{ClienteBean.remover}" update="@form"
-								icon="pi pi-trash"></p:commandButton>
-						</p:column>
-					</p:dataTable>
-				</p:scrollPanel>
 			</p:fieldset>
+			<br/>
+			<p:fieldset legend="Lista de Clientes">
+				<p:dataTable value="#{ClienteBean.listarCliente}" var="cliente"
+					scrollable="true" scrollHeight="" scrollWidth="100%">
+					<p:column headerText="Nome" sortBy="#{cliente.nome}">
+						<h:outputText value="#{cliente.nome}"></h:outputText>
+					</p:column>
+					<p:column headerText="CPF" sortBy="#{cliente.cpf}">
+						<h:outputText value="#{cliente.cpf}"></h:outputText>
+					</p:column>
+					<p:column headerText="Sexo" sortBy="#{cliente.sexo}">
+						<h:outputText value="#{cliente.sexo}"></h:outputText>
+					</p:column>
+					<p:column headerText="Idade" sortBy="#{cliente.idade}">
+						<h:outputText value="#{cliente.idade}"></h:outputText>
+					</p:column>
+					<p:column headerText="Fone">
+						<h:outputText value="#{cliente.contato.telefone}"></h:outputText>
+					</p:column>
+					<p:column headerText="E-mail">
+						<h:outputText value="#{cliente.contato.email}"></h:outputText>
+					</p:column>
+					<p:column headerText="Interesses">
+						<h:outputText value="#{cliente.interesses}"></h:outputText>
+					</p:column>
+					<p:column width="80">
+						<p:commandButton action="#{ClienteBean.editar}" update="@form"
+							icon="pi pi-pencil" title="Editar" style="margin-right:5px;"></p:commandButton>
+						<p:commandButton action="#{ClienteBean.remover}" update="@form"
+							icon="pi pi-trash" title="Remover"></p:commandButton>
+					</p:column>
+				</p:dataTable>
+			</p:fieldset>
+
 		</h:form>
 	</ui:define>
 

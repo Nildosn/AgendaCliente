@@ -10,9 +10,9 @@ import javax.persistence.Table;
 public class Usuario {
 
 	@Id
-	@Column (name = "USUARIO")
+	@Column (name = "USUARIO", nullable = false)
 	private String usuario;
-	@Column (name = "SENHA")
+	@Column (name = "SENHA", nullable = false)
 	private String senha;
 	
 	
