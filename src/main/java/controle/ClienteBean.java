@@ -21,7 +21,6 @@ public class ClienteBean {
 
 	public ClienteBean() {
 		this.cliente = new Cliente();
-		this.contato = new Contato();
 		this.clienteDao = new ClienteDAOImplementacao();
 		this.listarCliente = new ArrayList<Cliente>();
 	}

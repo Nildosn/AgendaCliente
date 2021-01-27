@@ -39,13 +39,6 @@
 					<h:outputLabel value="Idade"></h:outputLabel>
 					<p:inputText value="#{ClienteBean.cliente.idade}"></p:inputText>
 
-					<h:outputLabel value="Fone:"></h:outputLabel>
-					<p:inputMask mask="(999) 99999-9999"
-						value="#{ClienteBean.contato.telefone}"></p:inputMask>
-
-					<h:outputLabel value="E-mail:"></h:outputLabel>
-					<p:inputText value="#{ClienteBean.contato.email}"></p:inputText>
-
 					<h:outputLabel value="Interesses"></h:outputLabel>
 					<p:inputTextarea value="#{ClienteBean.cliente.interesses}" rows="3"
 						cols="50" maxlength="4000"
@@ -56,7 +49,7 @@
 			<p:fieldset legend="Lista de Clientes">
 				<p:dataTable value="#{ClienteBean.listarCliente}" var="cliente"
 					scrollable="true" scrollHeight="" scrollWidth="100%">
-					<p:column headerText="Nome" sortBy="#{cliente.nome}">
+					<p:column id="name" headerText="Nome" sortBy="#{cliente.nome}">
 						<h:outputText value="#{cliente.nome}"></h:outputText>
 					</p:column>
 					<p:column headerText="CPF" sortBy="#{cliente.cpf}">
@@ -67,12 +60,6 @@
 					</p:column>
 					<p:column headerText="Idade" sortBy="#{cliente.idade}">
 						<h:outputText value="#{cliente.idade}"></h:outputText>
-					</p:column>
-					<p:column headerText="Fone">
-						<h:outputText value="#{cliente.contato.telefone}"></h:outputText>
-					</p:column>
-					<p:column headerText="E-mail">
-						<h:outputText value="#{cliente.contato.email}"></h:outputText>
 					</p:column>
 					<p:column headerText="Interesses">
 						<h:outputText value="#{cliente.interesses}"></h:outputText>

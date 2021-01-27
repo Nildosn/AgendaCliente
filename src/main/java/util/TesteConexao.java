@@ -16,26 +16,26 @@ public class TesteConexao {
 		t.begin();
 
 		Login log = new Login();
-		log.setUsuario("admin4");
-		log.setSenha("admin4");
+		log.setUsuario("admin");
+		log.setSenha("admin");
 		
 		ent.persist(log);
-		
-		Contato cont = new Contato();
-		cont.setEmail("teste@teste.com");
-		cont.setTelefone("(81) 98877-6655");
-
-		ent.persist(cont);
-		
+	
 		Cliente c = new Cliente(); 
 		c.setNome("Testador");
 		c.setCpf("789.789.789-01");
 		c.setIdade(99);
 		c.setSexo("Masculino");
 		c.setInteresses("Compara um Carro");
-		c.setContato(cont);
+		
 				
 		ent.persist(c);
+
+		Contato cont = new Contato();
+		cont.setEmail("teste@teste.com");
+		cont.setTelefone("(81) 98877-6655");
+		ent.persist(cont);
+		
 
 		
 		t.commit();

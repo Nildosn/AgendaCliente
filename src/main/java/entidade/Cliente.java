@@ -1,11 +1,14 @@
 package entidade;
 
+
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -29,9 +32,9 @@ public class Cliente {
 	@Column(name = "IDADE", nullable = false)
 	private int idade;
 
-	@ManyToOne
-	@JoinColumn(name = "ID_CONTATO", referencedColumnName = "ID_CONTATO", nullable = false)
-	private Contato contato;
+	@OneToMany
+	@JoinColumn(name = "ID_CONTATO")
+	private List<Contato> contato;
 	
 	
 //get set 	
@@ -83,12 +86,14 @@ public class Cliente {
 		this.idade = idade;
 	}
 
-	public Contato getContato() {
+	public List<Contato> getContato() {
 		return contato;
 	}
 
-	public void setContato(Contato contato) {
+	public void setContato(List<Contato> contato) {
 		this.contato = contato;
 	}
+
+
 	
 }

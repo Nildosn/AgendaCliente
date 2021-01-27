@@ -74,7 +74,7 @@ public class ClienteDAOImplementacao implements ClienteDao {
 
 	@Override
 	public Cliente pesquisarCliente(String cpf) {
-		String sql = "from Profissional p where p.cpf = ?";
+		String sql = "from CLIENTE c where c.cpf = ?";
 
 		EntityManager ent = JpaUtil.getEntityManager();
 
@@ -94,7 +94,7 @@ public class ClienteDAOImplementacao implements ClienteDao {
 
 	@Override
 	public List<Cliente> pesquisarClientes(Cliente cliente) {
-		String sql = "from Profissional p where 1=1 " + montarWhere(cliente);
+		String sql = "from CLIENTE c where 1=1 " + montarWhere(cliente);
 
 		EntityManager ent = JpaUtil.getEntityManager();
 

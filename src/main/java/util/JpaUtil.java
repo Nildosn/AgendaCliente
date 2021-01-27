@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 /**
  * 
  * @author Nildson Kleyton
-  *
+ *
  */
 
 public class JpaUtil {
